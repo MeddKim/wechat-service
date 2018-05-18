@@ -1,0 +1,15 @@
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+dependencies{
+    compile("org.springframework.boot:spring-boot-starter-web:2.0.2.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-actuator:2.0.2.RELEASE")
+    compile("com.spring4all:swagger-spring-boot-starter:1.7.0.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-data-redis:2.0.2.RELEASE")
+    compile("dom4j:dom4j:1.6.1")
+    compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.10'
+    compileOnly 'org.projectlombok:lombok:1.16.18'
+    compile group: 'com.google.guava', name: 'guava', version: '23.0'
+//    compile 'com.zaxxer:HikariCP:2.7.3'
+//    compile 'mysql:mysql-connector-java:5.1.43'
+}

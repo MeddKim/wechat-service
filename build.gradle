@@ -1,0 +1,41 @@
+ext {
+        springBootVersion = '2.0.2.RELEASE'
+}
+allprojects {
+    apply plugin: 'maven'
+}
+
+subprojects {
+    apply plugin: 'java'
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+    repositories {
+        maven {
+            url "${nexusUrl}/repository/maven-public/"
+            credentials {
+                username nexusUsername
+                password nexusPassword
+            }
+        }
+    }
+}
+
+buildscript {
+    ext {
+        springBootVersion = '2.0.2.RELEASE'
+    }
+    repositories {
+        maven {
+            url "${nexusUrl}/repository/maven-public/"
+            credentials {
+                username nexusUsername
+                password nexusPassword
+            }
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}

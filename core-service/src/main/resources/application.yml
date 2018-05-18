@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: wechat-server
+  redis:
+    host: 116.196.75.83
+    port: 6379
+    timeout: 5000ms
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 1
+        max-active: 8
+        max-wait: 10000ms
+server:
+  port: 8901
+logging:
+  config: classpath:logback-${env}.xml

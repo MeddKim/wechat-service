@@ -1,0 +1,5 @@
+rootProject.name = 'wechat-service'
+include ':core-service'
+
+project(':core-service').name = rootProject.name + '-core-service'
+

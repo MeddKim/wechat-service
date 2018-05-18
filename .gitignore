@@ -1,0 +1,16 @@
+.idea/
+classes/
+.gradle/
+*.iml
+*.ipr
+*.iws
+**/rebel*.xml
+*.classes
+**/build
+/build/
+**/out/
+/out/
+/bower_components/
+/node_modules/
+**/bower_components/
+**/node_modules/
