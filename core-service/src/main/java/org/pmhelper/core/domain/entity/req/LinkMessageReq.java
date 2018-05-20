@@ -6,7 +6,7 @@ import lombok.Data;
  * 链接消息
  */
 @Data
-public class LinkMessageReq extends BaseMessage{
+public class LinkMessageReq extends BaseMessageReq{
     //消息标题
     private String title;
     //消息描述

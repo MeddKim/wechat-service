@@ -6,7 +6,7 @@ import lombok.Data;
  * 语音消息
  */
 @Data
-public class VoiceMessageReq extends BaseMessage {
+public class VoiceMessageReq extends BaseMessageReq {
     //媒体ID
     private String mediaId;
     //语言格式

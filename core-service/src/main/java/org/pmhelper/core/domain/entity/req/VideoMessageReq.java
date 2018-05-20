@@ -6,7 +6,7 @@ import lombok.Data;
  * 视频消息
  */
 @Data
-public class VideoMessageReq extends BaseMessage {
+public class VideoMessageReq extends BaseMessageReq {
     //视频消息媒体ID
     private String mediaId;
     //视频消息缩略图的媒体ID
