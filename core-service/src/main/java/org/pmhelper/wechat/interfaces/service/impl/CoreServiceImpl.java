@@ -89,10 +89,14 @@ public class CoreServiceImpl implements CoreService {
                 }
             }
             textMessageResp.setContent(respContent);
+            log.info(respContent);
             respXml = MessageUtil.messageToXml(textMessageResp);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        log.info("返回给用户-------");
+        log.info(respXml);
+        log.info("返回给用户--------");
         return respXml;
     }
 }
