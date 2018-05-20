@@ -54,6 +54,7 @@ public class MainController {
             String respXml = coreService.processRequest(request);
             return respXml;
         }
+        log.warn("请求认证未通过");
         return null;
     }
 

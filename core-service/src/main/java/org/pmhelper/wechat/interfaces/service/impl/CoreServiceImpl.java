@@ -1,5 +1,6 @@
 package org.pmhelper.wechat.interfaces.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.pmhelper.core.domain.entity.resp.TextMessageResp;
 import org.pmhelper.wechat.interfaces.service.CoreService;
 import org.pmhelper.wechat.interfaces.utils.MessageUtil;
@@ -10,10 +11,12 @@ import java.util.Date;
 import java.util.Map;
 
 @Service
+@Slf4j
 public class CoreServiceImpl implements CoreService {
 
     @Override
     public String processRequest(HttpServletRequest request) {
+
         //xml格式的消息数据
         String respXml = null;
         //默认返回的消息文本
@@ -26,6 +29,8 @@ public class CoreServiceImpl implements CoreService {
             String toUserName = requestMap.get("ToUserName");
             //消息类型
             String msgType = requestMap.get("MsgType");
+
+            log.info("消息类型是----"+msgType);
 
             //回复文本消息
             TextMessageResp textMessageResp = new TextMessageResp();
