@@ -32,6 +32,7 @@ public class MainController {
                        @RequestParam String timestamp,
                        @RequestParam String nonce,
                        @RequestParam String echostr){
+        log.info("微信认证");
         // 校验
         if(SignUtil.checkSignature(signature,timestamp,nonce)){
             return echostr;
