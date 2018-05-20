@@ -1,5 +1,6 @@
 package org.pmhelper.wechat.interfaces.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.pmhelper.wechat.interfaces.service.CoreService;
 import org.pmhelper.wechat.interfaces.utils.SignUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
  * 微信公众号认证
  */
 @RestController
+@Slf4j
 public class MainController {
 
     @Autowired
@@ -43,8 +45,10 @@ public class MainController {
                        @RequestParam String timestamp,
                        @RequestParam String nonce,
                        HttpServletRequest request){
+        log.info("微信请求到达！");
         //校验请求
         if(SignUtil.checkSignature(signature,timestamp,nonce)){
+
             //处理消息
             String respXml = coreService.processRequest(request);
             return respXml;
