@@ -8,9 +8,9 @@ import lombok.Data;
 @Data
 public class LinkMessageReq extends BaseMessageReq{
     //消息标题
-    private String title;
+    private String Title;
     //消息描述
-    private String description;
+    private String Description;
     //消息链接
-    private String url;
+    private String Url;
 }

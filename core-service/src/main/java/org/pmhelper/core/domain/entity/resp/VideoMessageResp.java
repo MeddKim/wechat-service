@@ -8,5 +8,5 @@ import lombok.Data;
 @Data
 public class VideoMessageResp extends BaseMessageResp {
 	// 视频
-	private Video video;
+	private Video Video;
 }

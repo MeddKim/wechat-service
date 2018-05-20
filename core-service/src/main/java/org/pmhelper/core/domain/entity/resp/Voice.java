@@ -5,5 +5,5 @@ package org.pmhelper.core.domain.entity.resp;
  */
 public class Voice {
 	// 语音媒体ID
-	private String mediaId;
+	private String MediaId;
 }

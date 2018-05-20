@@ -8,9 +8,9 @@ import lombok.Data;
 @Data
 public class VoiceMessageReq extends BaseMessageReq {
     //媒体ID
-    private String mediaId;
+    private String MediaId;
     //语言格式
-    private String format;
+    private String Format;
     //语言识别结果，UTF-8编码
-    private String recognition;
+    private String Recognition;
 }

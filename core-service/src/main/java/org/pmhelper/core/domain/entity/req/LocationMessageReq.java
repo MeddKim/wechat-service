@@ -8,7 +8,11 @@ import lombok.Data;
 @Data
 public class LocationMessageReq extends BaseMessageReq {
     //地理位置维度
-    private String location_X;
+    private String Location_X;
     //地理位置经度
-    private String location_y;
+    private String Location_y;
+    // 地图缩放大小
+    private String Scale;
+    // 地理位置信息
+    private String Label;
 }

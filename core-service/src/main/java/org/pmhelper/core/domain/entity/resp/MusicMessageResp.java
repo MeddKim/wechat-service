@@ -8,5 +8,5 @@ import lombok.Data;
 @Data
 public class MusicMessageResp extends BaseMessageResp {
 	// 音乐
-	private Music music;
+	private Music Music;
 }

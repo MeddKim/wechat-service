@@ -8,5 +8,5 @@ import lombok.Data;
 @Data
 public class TextMessageReq extends BaseMessageReq {
     //消息内容
-    private String content;
+    private String Content;
 }

@@ -8,13 +8,13 @@ import lombok.Data;
 @Data
 public class BaseMessageReq {
     //开发者微信号
-    private String toUserName;
+    private String ToUserName;
     //发送方账号（一个OpenID）
-    private String fromUserName;
+    private String FromUserName;
     //消息创建时间（整形）
-    private long createTime;
+    private long CreateTime;
     //消息类型
-    private String msgType;
+    private String MsgType;
     //消息ID
-    private long msgId;
+    private long MsgId;
 }

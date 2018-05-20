@@ -7,9 +7,9 @@ import lombok.Data;
  */
 @Data
 public class Video {
-	// 视频媒体ID
-	private String mediaId;
-	// 视频媒体缩略图ID
-	private String thumbMediaId;
+	// 媒体文件id
+	private String MediaId;
+	// 缩略图的媒体id
+	private String ThumbMediaId;
 
 }

@@ -4,12 +4,12 @@ package org.pmhelper.core.domain.entity.resp;
  * 文章
  */
 public class Article {
-	// 标题
-	private String title;
-	// 描述
-	private String description;
-	// 图片链接，支持JPG，PNG格式，较好的效果为大图640px*320px 小图80px*80px
-	private String picUrl;
+	// 图文消息名称
+	private String Title;
+	// 图文消息描述
+	private String Description;
+	// 图片链接，支持JPG、PNG格式，较好的效果为大图640*320，小图80*80
+	private String PicUrl;
 	// 点击图文消息跳转链接
-	private String url;
+	private String Url;
 }
