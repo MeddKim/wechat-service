@@ -101,7 +101,8 @@ public class CoreServiceImpl implements CoreService {
                 }
                 // 自定义菜单
                 else if (eventType.equals(MessageUtil.EVENT_TYPE_CLICK)) {
-                    // TODO 处理菜单点击事件
+                    // 处理菜单点击事件
+                    this.processClickMenu(requestMap.get("EventKey"));
                 }
             }
             textMessageResp.setContent(respContent);
@@ -127,5 +128,17 @@ public class CoreServiceImpl implements CoreService {
             }
         }
         return token;
+    }
+
+    /**
+     * 按钮ID
+     * @param EventKey
+     * @return
+     */
+    private String processClickMenu(String EventKey){
+        if(EventKey.equals("ZX00000_1")){
+            //TODO 具体操作
+        }
+        return null;
     }
 }
