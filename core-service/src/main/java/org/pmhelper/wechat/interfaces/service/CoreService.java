@@ -1,5 +1,7 @@
 package org.pmhelper.wechat.interfaces.service;
 
+import org.pmhelper.core.domain.entity.Token;
+
 import javax.servlet.http.HttpServletRequest;
 
 public interface CoreService {
@@ -9,4 +11,10 @@ public interface CoreService {
      * @return
      */
     String processRequest(HttpServletRequest request);
+
+    /**
+     * 获取token
+     * @return
+     */
+    Token getToken();
 }

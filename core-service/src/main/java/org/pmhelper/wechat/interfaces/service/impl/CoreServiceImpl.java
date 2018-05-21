@@ -1,18 +1,34 @@
 package org.pmhelper.wechat.interfaces.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
+import org.pmhelper.core.domain.entity.Token;
 import org.pmhelper.core.domain.entity.resp.TextMessageResp;
 import org.pmhelper.wechat.interfaces.service.CoreService;
+import org.pmhelper.wechat.interfaces.utils.CommonUtil;
 import org.pmhelper.wechat.interfaces.utils.MessageUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @Service
 @Slf4j
 public class CoreServiceImpl implements CoreService {
+
+    // 第三方用户唯一凭证
+    private static String appId = "wx3d949a21fdc84689";
+    // 第三方用户唯一凭证密钥
+    private static String appSecret = "e670cb3e0bcc2d8ac333f1f404036639";
+
+    //redis key
+    private static String APPTOKEN_KEY = "tokenKey";
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @Override
     public String processRequest(HttpServletRequest request) {
@@ -98,5 +114,18 @@ public class CoreServiceImpl implements CoreService {
         log.info(respXml);
         log.info("返回给用户--------");
         return respXml;
+    }
+
+    @Override
+    public Token getToken() {
+        Token token = (Token) redisTemplate.opsForValue().get(APPTOKEN_KEY);
+        if(null == token){
+            token = CommonUtil.getToken(appId,appSecret);
+            if(token != null){
+                redisTemplate.opsForValue().set(APPTOKEN_KEY,token);
+                redisTemplate.expire(APPTOKEN_KEY,7200, TimeUnit.SECONDS);
+            }
+        }
+        return token;
     }
 }

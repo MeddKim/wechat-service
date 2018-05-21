@@ -1,11 +1,13 @@
 package org.pmhelper.core.domain.entity.req;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * 语音消息
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class VoiceMessageReq extends BaseMessageReq {
     //媒体ID
     private String MediaId;
